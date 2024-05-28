@@ -1,0 +1,10 @@
+# mysql-config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+data:
+  my.cnf: |
+    [mysqld]
+    bind-address = 0.0.0.0
+    default_authentication_plugin=mysql_native_password
