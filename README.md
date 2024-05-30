@@ -43,11 +43,33 @@ http://{LoadBalancerID}/v1/customers
 
 This endpoint will return a list of all customers from the MySQL database.
 
+## Rollback
+
+### Deleting the MySQL Database Service
+
+To delete the MySQL database service, run the following command from your terminal:
+
+```bash
+./remove-MYSQL.sh
+```
+
+### Deleting the API Service
+
+To delete the API service, run the following command from your terminal:
+
+```bash
+./remove-API-service.sh
+```
+
+This script will delete the API service along with all its ReplicaSets.
+
 ## Summary
 
 1. Run ./init-MYSQL.sh to deploy the MySQL pod with StatefulSet.
 2. Run ./init-API-service.sh to deploy the API service with a ReplicaSet count of 3.
 3. Access the API endpoint at http://{LoadBalancerID}/v1/customers to retrieve customer data from the database.
+4. To delete the MySQL database service, run ./remove-MYSQL.sh.
+5. To delete the API service, run ./remove-API-service.sh.
 
 ## Additional Information
 
